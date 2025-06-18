@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;    /* Para nao ter barra de scroll quando o tubo sair da tela */
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.tubo {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: animacao-tubo 2s infinite linear;
+}
+
+@keyframes animacao-tubo {
+    from {
+        right: -80px; /*o valor negativo é para que o tubo inicie fora da tela a direita */
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: mario-jump 500ms ease-out;
+}
+
+@keyframes mario-jump {
+    
+    0% {
+        bottom: 0; /* inicio da animação */
+    }
+
+    40% {
+        bottom: 180px; /* ponto intermediario da animação */
+    }
+
+    50% {
+        bottom: 180px; /* durante/meio da animação */
+    }
+
+    60% {
+        bottom: 180px; /* ponto intermediario da animação */
+    }
+
+    100% {
+        bottom: 0; /* fim da animação, ou animação completa */
+    }
+}
+
+
+.nuvens {
+    position: absolute;
+    width: 550px;
+    animation: nuvens-animacao 20s infinite linear;
+}
+
+@keyframes nuvens-animacao {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
